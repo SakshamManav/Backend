@@ -9,9 +9,10 @@ app.use(express.json());
   
 mongoConnection();
 
-
+app.get("/", (req, res) => {
+  res.send("Hello and welcome to the Backend API!");
+});
 app.use("/", require("./Routes/CacheRoute") )
-
 
 
 app.listen(PORT, ()=>{
